@@ -76,9 +76,8 @@ public class ObieeConnPoolPasswdSwitch
     
     private static void mergeRpdCredentialsSourceRpd(Map<String,String> map)
     {	
-	try {
-
-	    StreamResult result = new StreamResult(new File("C:\\files\\OracleBIAnalyticsApps.xml"));
+	try 
+	{	    
 	    Document xmlDoc = getRpdXMLDocument(new File("C:\\files\\OracleBIAnalyticsAppsTest.xml"));				
 	    Transformer transformer = TransformerFactory.newInstance().newTransformer();
 
@@ -102,6 +101,7 @@ public class ObieeConnPoolPasswdSwitch
 		} 
 	    }
 
+	    StreamResult result = new StreamResult(new File("C:\\files\\OracleBIAnalyticsApps.xml"));
 	    transformer.transform(new DOMSource(xmlDoc), result);
 	    //System.out.println("Done");
 	} 
